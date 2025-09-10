@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.models.Paciente;
-import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.models.Usuario;
-import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.DTOs.UsuarioDTO;
-import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.models.Secretari;
-import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.services.GestorDeSesiones;
+import com.ing_y_calidad.TP_INTEGRADOR_DDS.models.Paciente;
+import com.ing_y_calidad.TP_INTEGRADOR_DDS.models.Usuario;
+import com.ing_y_calidad.TP_INTEGRADOR_DDS.DTOs.UsuarioDTO;
+import com.ing_y_calidad.TP_INTEGRADOR_DDS.models.Secretaria;
+import com.ing_y_calidad.TP_INTEGRADOR_DDS.services.GestorDeSesiones;
 
 @RestController
 @RequestMapping("/usuario") // Ruta base para todas las operaciones de Usuario.
@@ -22,7 +22,7 @@ public class UsuarioController {
 
     // Inyección de dependencia:
     @Autowired
-    public UsuarioController(GestorDeSesiones gestorDeSesiones) {
+    public InicioSesion (GestorDeSesiones gestorDeSesiones) {
         this.gestorDeSesiones = gestorDeSesiones;
     }
 
@@ -42,9 +42,9 @@ public class UsuarioController {
 
                 // Determinamos el tipo de usuario en base a la subclase:
                 if (usuario instanceof Paciente) {
-                    response.put("tipoUsuario", "Bedel");
-                } else if (usuario instanceof Administrador) {
-                    response.put("tipoUsuario", "Administrador");
+                    response.put("tipoUsuario", "Paciente");
+                } else if (usuario instanceof Secretaria) {
+                    response.put("tipoUsuario", "Secretaria");
                 }
 
                 return ResponseEntity.ok(response);

@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.models.Bedel;
+import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.models.Paciente;
 import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.models.Usuario;
 import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.DTOs.UsuarioDTO;
-import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.models.Administrador;
+import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.models.Secretari;
 import com.disenio_de_sistemas.TP_INTEGRADOR_DDS.services.GestorDeSesiones;
 
 @RestController
@@ -41,7 +41,7 @@ public class UsuarioController {
                 response.put("nombreUsuario", usuario.getNombreUsuario());
 
                 // Determinamos el tipo de usuario en base a la subclase:
-                if (usuario instanceof Bedel) {
+                if (usuario instanceof Paciente) {
                     response.put("tipoUsuario", "Bedel");
                 } else if (usuario instanceof Administrador) {
                     response.put("tipoUsuario", "Administrador");

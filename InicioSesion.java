@@ -1,5 +1,3 @@
-// Esto es solo de main
-
 import java.util.Map;
 import java.util.HashMap;
 import org.springframework.http.HttpStatus;

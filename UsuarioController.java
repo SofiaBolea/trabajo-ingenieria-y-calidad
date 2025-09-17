@@ -36,7 +36,7 @@ public class UsuarioController {
         Map<String, String> response = new HashMap<>();
 
         try {
-
+// CAMBIO A EN FEATURE
             Usuario usuario = gestorDeSesiones.autenticarUsuario(usuarioDTO);
 
             if (usuario != null) {

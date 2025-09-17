@@ -20,7 +20,7 @@ import com.ing_y_calidad.TP_INTEGRADOR_DDS.services.GestorDeSesiones;
 
 @RestController
 @RequestMapping("/usuario") // Ruta base para todas las operaciones de Usuario.
-public class UsuarioController {
+public class InicioSesion {
 
     private final GestorDeSesiones gestorDeSesiones;
 

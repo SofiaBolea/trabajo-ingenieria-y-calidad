@@ -1,5 +1,7 @@
 // MODIFICACIÓN HECHA EN BRANCH RELEASE-1.
 
+// Modificacion hecha en hotfix/1.0.1
+
 import java.util.Map;
 import java.util.HashMap;
 import org.springframework.http.HttpStatus;
@@ -66,5 +68,4 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
-
 }
